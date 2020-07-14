@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "myrsgcluster-b49b"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "myrsgcluster-b49b"
+    spec:
+      containers:
+        - name: "myrsgcluster-b49b"
+          image: "myrsgacr.azurecr.io/myrsgcluster"
+          ports:
+          - containerPort: 80
